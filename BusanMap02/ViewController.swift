@@ -34,6 +34,7 @@ class ViewController: UIViewController, MKMapViewDelegate, XMLParserDelegate {
     var timer = Timer()
     var currentTime: String?
     
+    // 광복동, 초량동
     let addrs:[String:[String]] = [
         "태종대" : ["영도구 전망로 24", "35.0597260", "129.0798400", "태종대유원지관리사무소", "도시대기", "녹지지역"],
         "전포동" : ["부산진구 전포대로 175번길 22", "35.1530480", "129.0635640","경남공고 옥상", "도시대기",  "상업지역"],
@@ -55,8 +56,12 @@ class ViewController: UIViewController, MKMapViewDelegate, XMLParserDelegate {
         "수정동" : ["동구 구청로 1", "35.1293350", "129.0454230", "동구청사 옥상", "도시대기", "주거지역"],
         "대신동" : ["서구 대신로 150", "35.1173230", "129.0156410", "부산국민체육센터", "도시대기", "주거지역"],
         "온천동" : ["동래구 중앙대로 동래역", "35.2056140", "129.0785020", "동래지하철 앞", "도로변", "상업지역"],
-        "초량동" : ["동구 초량동 윤흥신장군 동상앞", "35.11194650", "129.0354560", "윤흥신장군 동상 앞", "도로변", "상업지역"]
+        "초량동" : ["동구 초량동 윤흥신장군 동상앞", "35.11194650", "129.0354560", "윤흥신장군 동상 앞", "도로변", "상업지역"],
+        "부산신항" : ["부산 강서구 신항남로 416 부산신항다목적터미널(주) 본관 옥상", "35.0595018", "128.8121243", "부산신항다목적터미널(주) 본관 옥상", "도로변", "공업지역"],
+        "부산북항" : ["부산 동구 충장대로 314 관공선부두 내", "35.1173881", "129.0465578", "관공선부두 내", "도로변", "공업지역"]
     ]
+    
+    // 35.1173881,129.0465578
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,7 +134,7 @@ class ViewController: UIViewController, MKMapViewDelegate, XMLParserDelegate {
             //let subtitleOut =  "PM10 " + vPM10Cai! + " " + dPM10! + " ug/m3 "
             
             annotation = BusanData(coordinate: CLLocationCoordinate2D(latitude: dLat!, longitude: dLong!), title: dSite!, subtitle: "부산시 " + address!, pm10: dPM10!, pm10Cai: dPM10Cai!)
-            
+
             annotations.append(annotation!)
         }
         
@@ -288,8 +293,6 @@ class ViewController: UIViewController, MKMapViewDelegate, XMLParserDelegate {
         ac.addAction(UIAlertAction(title: "측정시간  " + currentTime! , style: .default, handler: nil))
         
         ac.addAction(UIAlertAction(title: mTitle, style: .default, handler: nil))
-        
-        ac.addAction(UIAlertAction(title: "초미세먼지(PM10) 나쁨(xx ug/m3)", style: .default, handler: nil))
         
         ac.addAction(UIAlertAction(title: "닫기", style: .cancel, handler: nil))
         self.present(ac, animated: true, completion: nil)
