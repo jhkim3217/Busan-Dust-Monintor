@@ -69,7 +69,6 @@ class ViewController: UIViewController, MKMapViewDelegate, XMLParserDelegate, CL
         super.viewDidLoad()
         self.title = "부산 미세먼지 지도"
         // Do any additional setup after loading the view, typically from a nib.
-        
         locationManager.delegate = self
         
         if CLLocationManager.locationServicesEnabled() {
@@ -82,6 +81,7 @@ class ViewController: UIViewController, MKMapViewDelegate, XMLParserDelegate, CL
 //        locationManager.requestWhenInUseAuthorization()
 //        locationManager.startUpdatingLocation()
 //        locationManager.requestAlwaysAuthorization()
+        
         myMapView.showsUserLocation = true
         myMapView.showsCompass = true
         
@@ -181,6 +181,25 @@ class ViewController: UIViewController, MKMapViewDelegate, XMLParserDelegate, CL
         myMapView.setRegion(region, animated: true)
     }
     
+    @IBAction func changeToOriginLocation(_ sender: Any) {
+        
+        let currnetLoc: CLLocation = locationManager.location!
+        let location = CLLocationCoordinate2D(latitude: currnetLoc.coordinate.latitude, longitude: currnetLoc.coordinate.longitude)
+        let span = MKCoordinateSpan(latitudeDelta: 0.20, longitudeDelta: 0.20)
+        let region = MKCoordinateRegion(center: location, span: span)
+        myMapView.setRegion(region, animated: true)
+        
+    }
+    
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        let userLocation: CLLocation = locations[0]
+//
+//        let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+//        print("center = \(center)")
+//
+//        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.21, longitudeDelta: 0.21))
+//        myMapView.setRegion(region, animated: true)
+//    }
     
     /*
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
