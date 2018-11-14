@@ -8,11 +8,13 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class ViewController: UIViewController, MKMapViewDelegate, XMLParserDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, XMLParserDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var myMapView: MKMapView!
     
+    var locationManager = CLLocationManager()
     var annotation: BusanData?
     var annotations: Array = [BusanData]()
     
@@ -27,6 +29,8 @@ class ViewController: UIViewController, MKMapViewDelegate, XMLParserDelegate {
     var loc: String?
     var dLat: Double?
     var dLong: Double?
+    var dArea: String? // 용도
+    var dNet: String? // 측정망
     var vPM10Cai: String?
     var mPM10Cai: String?
     
@@ -61,38 +65,28 @@ class ViewController: UIViewController, MKMapViewDelegate, XMLParserDelegate {
         "부산북항" : ["부산 동구 충장대로 314 관공선부두 내", "35.1173881", "129.0465578", "관공선부두 내", "도로변", "공업지역"]
     ]
     
-    // 35.1173881,129.0465578
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "부산 미세먼지 지도"
         // Do any additional setup after loading the view, typically from a nib.
         
+        locationManager.delegate = self
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.requestAlwaysAuthorization()
+        }
+        
+        locationManager.startUpdatingLocation()
+        
+//        locationManager.requestWhenInUseAuthorization()
+//        locationManager.startUpdatingLocation()
+//        locationManager.requestAlwaysAuthorization()
+        myMapView.showsUserLocation = true
+        myMapView.showsCompass = true
+        
         myParse()
         timer = Timer.scheduledTimer(timeInterval: 60*60, target: self, selector: #selector(myParse), userInfo: nil, repeats: true)
-        
-//        // XML Parsing
-//        let key = "aT2qqrDmCzPVVXR6EFs6I50LZTIvvDrlvDKekAv9ltv9dbO%2F8i8JBz2wsrkpr9yrPEODkcXYzAqAEX1m%2Fl4nHQ%3D%3D"
-//        let strURL = "http://opendata.busan.go.kr/openapi/service/AirQualityInfoService/getAirQualityInfoClassifiedByStation?ServiceKey=\(key)&numOfRows=21"
-//
-//        if let url = URL(string: strURL) {
-//            if let parser = XMLParser(contentsOf: url) {
-//                parser.delegate = self
-//
-//                if (parser.parse()) {
-//                    print("parsing success")
-//
-//                    for item in items {
-//                        print("item pm10 = \(item["pm10"]!)")
-//                    }
-//
-//                } else {
-//                    print("parsing fail")
-//                }
-//            } else {
-//                print("url error")
-//            }
-//        }
         
         // Map
         myMapView.delegate = self
@@ -111,6 +105,8 @@ class ViewController: UIViewController, MKMapViewDelegate, XMLParserDelegate {
                     lat = value[1]
                     long = value[2]
                     loc = value[3]
+                    dArea = value[4]
+                    dNet = value[5]
                     dLat = Double(lat!)
                     dLong = Double(long!)
                 }
@@ -133,17 +129,18 @@ class ViewController: UIViewController, MKMapViewDelegate, XMLParserDelegate {
             
             //let subtitleOut =  "PM10 " + vPM10Cai! + " " + dPM10! + " ug/m3 "
             
-            annotation = BusanData(coordinate: CLLocationCoordinate2D(latitude: dLat!, longitude: dLong!), title: dSite!, subtitle: "부산시 " + address!, pm10: dPM10!, pm10Cai: dPM10Cai!)
+            annotation = BusanData(coordinate: CLLocationCoordinate2D(latitude: dLat!, longitude: dLong!), title: dSite!, subtitle: loc!, pm10: dPM10!, pm10Cai: dPM10Cai!, area: dArea!, network: dNet!)
 
             annotations.append(annotation!)
         }
         
-        print("annotations = \(annotations)")
+        //print("annotations = \(annotations)")
         // 지도의 중심점, 반경 등(zoomToRegion)이 없이도 모든 pin을 포함하여 지도가 보여질 수 있도록 함
         //myMapView.showAnnotations(annotations, animated: true)
         
         // 지도의 중심점, 반경 등(zoomToRegion)이 반드시 필요함
         myMapView.addAnnotations(annotations)
+//        myMapView.showAnnotations(annotations, animated: true)
     }
     
     @objc func myParse() {
@@ -183,6 +180,7 @@ class ViewController: UIViewController, MKMapViewDelegate, XMLParserDelegate {
         let region = MKCoordinateRegion(center: location, span: span)
         myMapView.setRegion(region, animated: true)
     }
+    
     
     /*
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -287,13 +285,13 @@ class ViewController: UIViewController, MKMapViewDelegate, XMLParserDelegate {
             default : mPM10Cai = "오류"
         }
         
-        let mTitle = "미세먼지(PM 10)  \(mPM10Cai!) (\(vPM10!) ug/m3)"
+        let mTitle = "미세먼지(PM 10) : \(mPM10Cai!)(\(vPM10!) ug/m3)"
         
         let ac = UIAlertController(title: vStation! + " 대기질 측정소", message: nil, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "측정시간  " + currentTime! , style: .default, handler: nil))
-        
+        ac.addAction(UIAlertAction(title: "측정시간 : " + currentTime! , style: .default, handler: nil))
         ac.addAction(UIAlertAction(title: mTitle, style: .default, handler: nil))
-        
+        ac.addAction(UIAlertAction(title: "용도 : " + dArea!, style: .default, handler: nil))
+        ac.addAction(UIAlertAction(title: "측정망 : " + dNet!, style: .default, handler: nil))
         ac.addAction(UIAlertAction(title: "닫기", style: .cancel, handler: nil))
         self.present(ac, animated: true, completion: nil)
         

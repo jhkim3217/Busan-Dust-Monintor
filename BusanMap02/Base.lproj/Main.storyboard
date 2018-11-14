@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rua-Ka-QgF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rua-Ka-QgF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,20 +29,20 @@
                                 </segments>
                             </segmentedControl>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tif-EL-PEc">
-                                <rect key="frame" x="180" y="621" width="180" height="36"/>
+                                <rect key="frame" x="196" y="618" width="164" height="39"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ezz-ur-eRD">
-                                    <rect key="frame" x="0.0" y="0.0" width="180" height="36"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="164" height="39"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DNk-Zl-nw7">
-                                            <rect key="frame" x="9" y="2" width="163" height="32"/>
+                                            <rect key="frame" x="0.0" y="2" width="164" height="35"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋음" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HW7-Qy-Dfb">
-                                                    <rect key="frame" x="0.0" y="0.0" width="35" height="32"/>
-                                                    <color key="backgroundColor" red="0.60997852409999997" green="1" blue="0.64654652950000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                    <color key="backgroundColor" red="0.36012532520395035" green="1" blue="0.11759370491103083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="32" id="1h4-8n-yxQ"/>
-                                                        <constraint firstAttribute="height" constant="32" id="tRL-7x-19n"/>
+                                                        <constraint firstAttribute="width" constant="35" id="fv5-p5-Bez"/>
+                                                        <constraint firstAttribute="height" constant="35" id="ru2-gX-sAc"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,8 +54,8 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보통" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4xd-8I-kY0">
-                                                    <rect key="frame" x="43" y="0.0" width="34.5" height="32"/>
-                                                    <color key="backgroundColor" red="0.2192387522" green="0.56604278649999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="43" y="0.0" width="35" height="35"/>
+                                                    <color key="backgroundColor" red="0.075712378492852617" green="0.041251751733074937" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나쁨" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="URP-n0-ckD">
-                                                    <rect key="frame" x="85.5" y="0.0" width="35" height="32"/>
+                                                    <rect key="frame" x="86" y="0.0" width="35" height="35"/>
                                                     <color key="backgroundColor" red="1" green="0.6671401092" blue="0.13889048949999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,7 +78,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매우                             나쁨" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vkw-aP-HIE">
-                                                    <rect key="frame" x="128.5" y="0.0" width="34.5" height="32"/>
+                                                    <rect key="frame" x="129" y="0.0" width="35" height="35"/>
                                                     <color key="backgroundColor" red="1" green="0.23690056779999999" blue="0.1103341603" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -97,16 +97,25 @@
                                         </stackView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="18"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="3Ky-O3-UMF"/>
                                     <constraint firstItem="DNk-Zl-nw7" firstAttribute="top" secondItem="Tif-EL-PEc" secondAttribute="top" constant="2" id="Le2-S2-vNn"/>
-                                    <constraint firstItem="DNk-Zl-nw7" firstAttribute="leading" secondItem="Tif-EL-PEc" secondAttribute="leading" constant="9" id="Wna-yv-LlD"/>
-                                    <constraint firstAttribute="trailing" secondItem="DNk-Zl-nw7" secondAttribute="trailing" constant="8" id="nFg-th-FUh"/>
+                                    <constraint firstItem="DNk-Zl-nw7" firstAttribute="leading" secondItem="Tif-EL-PEc" secondAttribute="leading" id="Wna-yv-LlD"/>
+                                    <constraint firstAttribute="trailing" secondItem="DNk-Zl-nw7" secondAttribute="trailing" id="nFg-th-FUh"/>
                                     <constraint firstAttribute="bottom" secondItem="DNk-Zl-nw7" secondAttribute="bottom" constant="2" id="ohr-x8-bmn"/>
                                 </constraints>
                                 <blurEffect style="extraLight"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
