@@ -126,7 +126,11 @@
                                 </constraints>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yM-CU-prn">
+<<<<<<< HEAD
                                 <rect key="frame" x="18" y="82" width="32" height="32"/>
+=======
+                                <rect key="frame" x="16" y="80" width="32" height="32"/>
+>>>>>>> ec2e4985f2898397c08cab19efcd3caf9926fabb
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="WaQ-2B-yGF"/>
                                     <constraint firstAttribute="width" constant="32" id="kr1-jc-3nX"/>
@@ -139,7 +143,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vvS-Hl-hhe" firstAttribute="centerY" secondItem="6yM-CU-prn" secondAttribute="centerY" constant="-2" id="D18-PH-6Op"/>
+                            <constraint firstItem="6yM-CU-prn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="0Ki-UW-LVd"/>
+                            <constraint firstItem="vvS-Hl-hhe" firstAttribute="centerY" secondItem="6yM-CU-prn" secondAttribute="centerY" id="D18-PH-6Op"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lcr-xY-RcG" secondAttribute="bottom" constant="16" id="GNR-uk-vQa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IUm-Ru-uBv" secondAttribute="trailing" id="PJe-xN-Ags"/>
                             <constraint firstItem="vvS-Hl-hhe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RCZ-ei-7EA"/>
@@ -149,7 +154,11 @@
                             <constraint firstItem="lcr-xY-RcG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="66" id="fKw-PS-Ojl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IUm-Ru-uBv" secondAttribute="bottom" id="ljd-By-9Vq"/>
                             <constraint firstItem="vvS-Hl-hhe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="pEv-gI-z7T"/>
+<<<<<<< HEAD
                             <constraint firstItem="6yM-CU-prn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="qbv-ce-Q4v"/>
+=======
+                            <constraint firstItem="6yM-CU-prn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pVy-Ug-cm1"/>
+>>>>>>> ec2e4985f2898397c08cab19efcd3caf9926fabb
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Tif-EL-PEc" secondAttribute="bottom" constant="10" id="t9b-Jk-J9R"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tif-EL-PEc" secondAttribute="trailing" constant="15" id="x3s-lK-RpU"/>
                         </constraints>
@@ -164,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1649" y="-261"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B6M-28-6BE">
