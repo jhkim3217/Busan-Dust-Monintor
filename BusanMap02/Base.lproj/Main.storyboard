@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vvS-Hl-hhe">
-                                <rect key="frame" x="107" y="84" width="161" height="29"/>
+                                <rect key="frame" x="107" y="84" width="161" height="25"/>
                                 <segments>
                                     <segment title="PM10"/>
                                     <segment title="PM2.5"/>
@@ -126,7 +126,7 @@
                                 </constraints>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yM-CU-prn">
-                                <rect key="frame" x="327" y="84" width="32" height="32"/>
+                                <rect key="frame" x="18" y="82" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="WaQ-2B-yGF"/>
                                     <constraint firstAttribute="width" constant="32" id="kr1-jc-3nX"/>
@@ -141,14 +141,15 @@
                         <constraints>
                             <constraint firstItem="vvS-Hl-hhe" firstAttribute="centerY" secondItem="6yM-CU-prn" secondAttribute="centerY" constant="-2" id="D18-PH-6Op"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lcr-xY-RcG" secondAttribute="bottom" constant="16" id="GNR-uk-vQa"/>
-                            <constraint firstItem="6yM-CU-prn" firstAttribute="leading" secondItem="vvS-Hl-hhe" secondAttribute="trailing" constant="59" id="Ikl-wj-b6F"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IUm-Ru-uBv" secondAttribute="trailing" id="PJe-xN-Ags"/>
                             <constraint firstItem="vvS-Hl-hhe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RCZ-ei-7EA"/>
                             <constraint firstItem="IUm-Ru-uBv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aQx-36-WhD"/>
                             <constraint firstItem="IUm-Ru-uBv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aYx-y6-apO"/>
+                            <constraint firstItem="6yM-CU-prn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="bh5-rt-BmE"/>
                             <constraint firstItem="lcr-xY-RcG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="66" id="fKw-PS-Ojl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IUm-Ru-uBv" secondAttribute="bottom" id="ljd-By-9Vq"/>
                             <constraint firstItem="vvS-Hl-hhe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="pEv-gI-z7T"/>
+                            <constraint firstItem="6yM-CU-prn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="qbv-ce-Q4v"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Tif-EL-PEc" secondAttribute="bottom" constant="10" id="t9b-Jk-J9R"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tif-EL-PEc" secondAttribute="trailing" constant="15" id="x3s-lK-RpU"/>
                         </constraints>
